@@ -13,7 +13,9 @@ const MealDetailScreen = props => {
     );
     return (
         <View style = {styles.screen}>
+
                <Text>{selectedMeal.title}</Text>
+
             
             <Button title='go Back to Categories' onPress={() => {
                   // props.navigation.pop()

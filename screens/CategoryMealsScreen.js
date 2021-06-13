@@ -23,6 +23,7 @@ const renderMealItem = itemData => {
                 )
             }}
             />
+
   );
 };
 
@@ -40,6 +41,7 @@ const renderMealItem = itemData => {
               renderItem={renderMealItem} 
               style={{width: '100%'}}
               />
+
         </View>
            
     );

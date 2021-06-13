@@ -1,16 +1,16 @@
- import React from 'react'
- import { Platform } from 'react-native'
- import { createStackNavigator } from 'react-navigation-stack' ;
- import { createAppContainer } from 'react-navigation';
- import { createBottomTabNavigator } from 'react-navigation-tabs';
- import { Ionicons } from '@expo/vector-icons';
+import React from 'react'
+
+import { Platform } from 'react-native'
+import { createStackNavigator } from 'react-navigation-stack' ;
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { Ionicons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 
  import CategoriesScreen from '../screens/CatergoriesScreen';
  import CategoryMealsScreen from '../screens/CategoryMealsScreen';
  import MealDetailScreen from '../screens/MealDetailScreen';
  import FavoritesScreen from '../screens/FavoritesScreen';
-
 
  
  const MealsNavigator = createStackNavigator({
