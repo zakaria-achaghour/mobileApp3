@@ -13,6 +13,17 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
  import FavoritesScreen from '../screens/FavoritesScreen';
 
  
+ const defaultStackNavOptions = 
+  {
+    headerStyle: {
+      backgroundColor: Platform.os === 'android' ? 'white': '#ff6f00'
+    },
+    headerTintColor: Platform.os === 'android' ? '#ff6f00': '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+}
+ 
  const MealsNavigator = createStackNavigator({
      Categories: {
        screen:CategoriesScreen,
@@ -24,16 +35,19 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 
  },
  {
-   defaultNavigationOptions: {
-          headerStyle: {
-            backgroundColor: Platform.os === 'android' ? 'white': '#ff6f00'
-          },
-          headerTintColor: Platform.os === 'android' ? '#ff6f00': '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-   }
+   // initialase categories
+   defaultNavigationOptions: defaultStackNavOptions
  }); 
+
+
+const FavNavigator = createStackNavigator({
+  Favorites: FavoritesScreen,
+  MealDetail: MealDetailScreen,
+
+},{
+  // initialase categories
+  defaultNavigationOptions: defaultStackNavOptions
+}); 
 
  const tabScreenConfig = {
   Meals: {screen: MealsNavigator, navigationOptions: {
@@ -42,18 +56,24 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
     },
     tabBarColor: 'orange',
   }},
-  Favorites: {screen: FavoritesScreen,navigationOptions:{
+  Favorites: {screen: FavNavigator,navigationOptions:{
     tabBarLabel:'Favorites !',
     tabBarIcon: (tabInfo) => {
       return (<Ionicons name='ios-star' size={25} color={tabInfo.tintColor}  />);
-  }
+  },
+  tabBarColor: 'blue',
   }},
  }
  const MealsFavTabNavigator =
          Platform.os!=='android' ?
           createMaterialBottomTabNavigator(tabScreenConfig, {
-            activeColor:'#eb8934',
-            shifting:true
+            activeColor:'white',
+            // controlle in chnage color in tab bar
+            shifting:true,
+            barStyle:{
+              backgroundColor: 'blue',
+            }
+
           }) : 
           createBottomTabNavigator( tabScreenConfig,
             {
