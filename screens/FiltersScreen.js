@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { View, Text, StyleSheet,Switch } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
@@ -12,7 +13,7 @@ const FiltersScreen = props => {
                    <Switch />
                </View>
         </View>
-    );
+    ); 
 }
 
 FiltersScreen.navigationOptions = (navData) => {
@@ -24,8 +25,9 @@ FiltersScreen.navigationOptions = (navData) => {
                         }} />
                     </HeaderButtons>
     }
-
+  
 };
+
 const styles = StyleSheet.create({
            screen: {
                flex:1,
