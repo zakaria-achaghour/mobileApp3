@@ -6,7 +6,7 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
-import { ceateDrawerNavigator, createDrawerNavigator } from 'react-navigation-drawer';
+import {  createDrawerNavigator } from 'react-navigation-drawer';
 
  import CategoriesScreen from '../screens/CatergoriesScreen';
  import CategoryMealsScreen from '../screens/CategoryMealsScreen';
@@ -118,6 +118,7 @@ const FiltersNavigator = createStackNavigator({
        Filters:FiltersNavigator
      }, {
        contentOptions: {
+        
          activeTintColor: 'orange'
        }
      });
